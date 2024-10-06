@@ -22,7 +22,8 @@ class Asteroid(CircleShape):
 
     vector_a = self.velocity.rotate(angle)
     vector_b = self.velocity.rotate(-angle)
-    
+
+    new_asteroid_radius = self.radius - ASTEROID_MIN_RADIUS
 
     
     
