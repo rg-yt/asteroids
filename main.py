@@ -32,17 +32,22 @@ def main():
             return
         
         for obj in updatable:
-           obj.update(dt)
+          obj.update(dt)
           
         for asteroid in asteroids:
-           if asteroid.collides_with(player):
-              print("Game Over!")
-              sys.exit()
-
+          if asteroid.collides_with(player):
+            print("Game Over!")
+            sys.exit()
+          
+          for shot in shots:
+            if asteroid.collides_with(shot):
+               asteroid.kill()
+               shot.kill()
+ 
         screen.fill("black")
 
         for obj in drawable:
-           obj.draw(screen)
+          obj.draw(screen)
         
         pygame.display.flip()
         dt = clock.tick(60) / 1000
