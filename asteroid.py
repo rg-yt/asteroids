@@ -19,6 +19,10 @@ class Asteroid(CircleShape):
       return
     
     angle = random.uniform(20, 50)
+
+    vector_a = self.velocity.rotate(angle)
+    vector_b = self.velocity.rotate(-angle)
     
+
     
     
