@@ -9,7 +9,9 @@ def main():
     dt = 0
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
     Player.containers = updatable, drawable
+    Player.containers = updatable, drawable, asteroids
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
